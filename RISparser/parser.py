@@ -171,8 +171,12 @@ class Ris(Base):
 
     def get_n1_content(self,line,tag):
         c = line[6:].strip()
-        tagpat = re.compile("{}:(.*)".format(tag))
-        return tagpat.match(c).group(1).strip()
+        try:
+            tagpat = re.compile("{}:(.*)".format(tag))
+            return tagpat.match(c).group(1).strip()
+        except:
+            print(line)
+            return None
 
     def get_content(self, line):
         return line[6:].strip()

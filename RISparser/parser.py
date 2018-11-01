@@ -165,7 +165,7 @@ class Wok(Base):
 class Ris(Base):
     START_TAG = 'TY'
     PATTERN = '^[A-Z][A-Z0-9]  - '
-    N1_PATTERN = '^.*- ([\w\s]*):'
+    N1_PATTERN = '^N1  - ([\w\s]*):'
 
     counter_re = re.compile('^[0-9]+.')
 
